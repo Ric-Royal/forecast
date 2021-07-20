@@ -43,7 +43,7 @@ periods_input = st.number_input('How many periods would you like to forecast int
 min_value = 1, max_value = 731)
 
 if df is not None:
-    m = Prophet()
+    m = Prophet(interval_width=0.95,yearly_seasonality=True)
     m.fit(data)
 
 """
